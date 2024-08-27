@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <h3> Function Task </h3>
+</body>
+<script>
+    // write a JS program on Fibonacci series.
+    function fibonacci(n) {
+  if (n <= 0) {
+    return 0;
+  } else if (n === 1) {
+    return 1;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+const n = 10; 
+for (let i = 1; i <= n; i++) {
+  console.log(fibonacci(i));
+}
+
+//write a JS program to convert a temp from Celsius to Fahrenheit.
+function celsiusToFahrenheit(celsius) {
+  const fahrenheit = (celsius * 9/5) + 32;
+  return fahrenheit;
+}
+const celsius = 30;
+const fahrenheit = celsiusToFahrenheit(celsius);
+console.log(`${celsius} degrees Celsius is equal to ${fahrenheit} degrees Fahrenheit.`);
+// Write an JS program to write square root of given number
+
+function calculateSquareRoot(number) {
+  if (number < 0) {
+    return "Cannot calculate the square root of a negative number.";
+  }
+  const squareRoot = Math.sqrt(number);
+  return squareRoot;
+}
+const number = 25;
+const squareRoot = calculateSquareRoot(number);
+console.log(`The square root of ${number} is ${squareRoot}`);
+
+//Write a JS program to generate random integer b/w two given numbers.
+
+function generateRandomInteger(min, max) {
+  const randomDecimal = Math.random();
+  const randomInteger = Math.floor(randomDecimal * (max - min + 1)) + min;
+
+  return randomInteger;
+}
+const min = 10;
+const max = 20;
+const randomNumber = generateRandomInteger(min, max);
+console.log(`A random integer between ${min} and ${max} is: ${randomNumber}`);
+
+//write an JS program to check whether given string is palindrome or not
+
+function isPalindrome(str) {
+  str = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  return str === str.split('').reverse().join('');
+}
+const word = "racecar";
+const result = isPalindrome(word);
+if (result) {
+  console.log(`${word} is a palindrome.`);
+} else {
+  console.log(`${word} is not a palindrome.`);
+}
+</script>
+</html>
