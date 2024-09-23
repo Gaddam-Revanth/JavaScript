@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">existing content lerom
+    </p>
+    <button onclick="change()">click me</button>
+    <br><br><br>
+
+    <img id="Image" src="https://i.ytimg.com/vi/qov6BUOM9pQ/maxresdefault.jpg">
+
+<br>
+    <button onclick="newimage()">change Image</button>
+    <br><br>
+
+    <div id="remove">Removing it from dom</div>
+    <br>
+</body>
+<script>
+    //Task 1. creating and appending an element
+    const element = document.createElement('div')
+    const addText = element.append(" Hello , World ! ")
+    document.body.append(element)
+
+
+       //Task 2. Changing the Content of an Existing Element
+       function change(){
+       document.getElementById('text').textContent="This is updated content 'OZARK'"
+       }
+    //Task 3. Creating and Appending a List of Items
+    
+    const ul=document.createElement('ul')
+    const items=['Item1','Item2','Item3']
+
+    items.forEach(elements => {
+        const li=document.createElement('li')
+        li.textContent=elements
+        ul.append(li)
+    });
+    document.body.append(ul)
+
+    // Task 4. Editing an Attribute of an Element
+    function newimage(){
+        const image = document.getElementById('Image')
+        image.setAttribute('src','https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/10/ozark-cast-character-guide.jpg')
+    }
+
+    // Task 5: Deleting an Element
+       const removing=document.getElementById('remove')
+       removing.remove()
+</script>
+</html>
